@@ -11,7 +11,7 @@ Observable<BaseResponse> get(String url, {Map<String, dynamic> params}) =>
 
 Future<BaseResponse> _get(String url, {Map<String, dynamic> params}) async {
   var response = await HttpUtil().dio.get(url, queryParameters: params);
-  var res = BaseResponse.fromJson(response.data);
+  var res; //= BaseResponse.fromJson(response.data);
   if (res.success == false) {
     Fluttertoast.showToast(msg: res.message);
   }
@@ -29,7 +29,7 @@ Future<BaseResponse> _post(String url, dynamic body,
   var response = await HttpUtil()
       .dio
       .post(url, data: body, queryParameters: queryParameters);
-  var res = BaseResponse.fromJson(response.data);
+  var res; //= BaseResponse.fromJson(response.data);
   if (res.success == false) {
     Fluttertoast.showToast(msg: res.message, gravity: ToastGravity.CENTER);
   }

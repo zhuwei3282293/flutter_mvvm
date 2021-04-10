@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm/base/base_provide.dart';
 import 'package:flutter_mvvm/main_provide.dart';
-import 'package:flutter_mvvm/page/page1/page1.dart';
+import 'package:flutter_mvvm/page/order/order_page.dart';
 import 'package:flutter_mvvm/page/page2/page2.dart';
 
 import 'package:provider/provider.dart';
@@ -26,7 +26,7 @@ class _AppContentPage extends StatefulWidget {
 class _AppState extends State<_AppContentPage>
     with TickerProviderStateMixin<_AppContentPage> {
   MainProvide _mainProvide;
-  Page1 _page1;
+  OrderPage _page1;
   Page2 _page2;
   TabController controller;
 

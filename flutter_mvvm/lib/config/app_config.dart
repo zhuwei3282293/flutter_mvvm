@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppConfig {
-  static const baseUrl = 'http://chenliang.yishouhaoge.cn/';
+  static const baseUrl = 'http://139.159.182.95:8770/';
 
   static const primaryColor = Color(0xFF5DBE82); //主题色
 
