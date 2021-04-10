@@ -3,7 +3,7 @@ import 'package:flutter_mvvm/page/order/Model/order.dart';
 import 'package:flutter_mvvm/page/order/Model/order_repository.dart';
 import 'package:rxdart/rxdart.dart';
 
-class Page1Provide extends BaseProvide {
+class OrderProvide extends BaseProvide {
   // 页数
   int _page = 0;
   int get page => _page;

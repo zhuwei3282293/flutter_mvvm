@@ -39,6 +39,8 @@ class _AppState extends State<_AppContentPage>
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 
+
+
   @override
   void initState() {
     // TODO: implement initState
@@ -76,22 +78,22 @@ class _AppState extends State<_AppContentPage>
           body: new Stack(
             clipBehavior: Clip.hardEdge,
             alignment: AlignmentDirectional.bottomEnd,
-            // children: <Widget>[_initTabBarView()],
+            ), //<Widget>[_page1, _page2],
           ),
           bottomNavigationBar: _initBottomNavigationBar()),
     );
     return changeNotifierProvider;
   }
 
-  Widget _initTabBarView() {
-    return Consumer(builder:
-        (BuildContext context, MainProvide mainProvider, Widget child) {
-      return IndexedStack(
-        index: _mainProvide.currentIndex,
-        children: <Widget>[_page1, _page2],
-      );
-    });
-  }
+  // Widget _initTabBarView() {
+  //   return Consumer(builder:
+  //       (BuildContext context, MainProvide mainProvider, Widget child) {
+  //     return IndexedStack(
+  //       index: mainProvider.currentIndex,
+  //       children: ,
+  //     );
+  //   });
+  // }
 
   Widget _initBottomNavigationBar() {
     return Theme(
