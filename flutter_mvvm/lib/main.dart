@@ -1,17 +1,53 @@
-import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_mvvm/app.dart';
+import 'package:flutter_mvvm/config/app_config.dart';
 
-void main() => runApp(new MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppConfig.init();
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new RandomWords(),
+    return MaterialApp(
+      home: new App(),
+      debugShowCheckedModeBanner: false, // 去除debug旗标
       theme: new ThemeData(
-        accentColor: Colors.yellow,
-        primaryColor: Colors.red,
-      ),
+          primaryColor: new Color.fromRGBO(255, 255, 255, 1),
+          highlightColor: Colors.red, //AppConfig.backgroundColor,
+          splashColor: Colors.black, //AppConfig.backgroundColor,
+          hintColor: Colors.grey,
+          scaffoldBackgroundColor:
+              new Color.fromRGBO(255, 255, 255, 1), //设置页面背景颜色
+//          bottomAppBarColor: new Color.fromRGBO(19, 35, 63, 1), //设置底部导航的背景色
+//          backgroundColor: new Color.fromRGBO(19, 35, 63, 1),
+//          indicatorColor: new Color.fromRGBO(19, 35, 63, 1),    //设置tab指示器颜色
+
+          primaryIconTheme:
+              new IconThemeData(color: Colors.black), //主要icon样式，如头部返回icon按钮
+          iconTheme:
+              new IconThemeData(size: 18.0, color: Colors.white), //设置icon样式
+
+          textTheme: new TextTheme(
+              headline6: new TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal),
+              subtitle2: new TextStyle(
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal)),
+          primaryTextTheme: new TextTheme(
+              //设置文本样式
+              headline6: new TextStyle(
+                  color: Colors.black,
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold)),
+          tabBarTheme: new TabBarTheme(
+              labelColor: Colors.black, unselectedLabelColor: Colors.grey)),
     );
   }
 }
